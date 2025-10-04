@@ -1,0 +1,20 @@
+QUESTION NO:-560
+
+#### CODE START
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        count=0
+        curr=0
+        sums={0:1}
+        for num in nums:
+            curr+=num
+            if curr-k in sums:
+                count += sums[curr - k]
+            sums[curr] = sums.get(curr, 0) + 1
+        return count        
+
+nums = [1,1,1]
+k = 2  
+solution=Solution()
+result=solution.subarraySum(nums,k)
+#### CODE END 
