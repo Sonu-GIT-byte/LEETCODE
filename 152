@@ -1,0 +1,19 @@
+QUESTION N0:-152 MAXIMUM PRODUCT SUBARRAY
+
+### CODE START 
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        maxi=nums[0]
+        curr_maxi=nums[0]
+        curr_mini=nums[0]
+        for num in nums[1:]:
+            if num<0:
+                curr_maxi,curr_mini=curr_mini,curr_maxi
+            curr_maxi=max(num,curr_maxi*num) 
+            curr_mini=min(num,curr_mini*num)
+            maxi=max(maxi,curr_maxi) 
+        return maxi              
+nums = [2,3,-2,4]
+solution=Solution()
+result=solution.maxProduct(nums)   
+### CODE END
