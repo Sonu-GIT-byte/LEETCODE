@@ -1,0 +1,16 @@
+QUESTION NO:-121 BEST TIME TO BUY AND SELL STOCK 
+
+### CODE START 
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        mini=prices[0]
+        profit=0
+        for i in range(len(prices)):
+            cost=prices[i]-mini
+            profit=max(profit,cost)
+            mini=min(mini,prices[i])
+        return profit
+prices=[9,6,3,10,14,5,7]        
+solution1=Solution()
+result=solution1.maxProfit(prices)            
+#### CODE END         
